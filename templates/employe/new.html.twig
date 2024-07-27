@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if edit %}
+        Edition employé   
+    {% else %}
+        Nouvel employé
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if edit %}
+        <h1>Edit d'un employé</h1>
+    {% else %}
+        <h1>Ajouter une employé</h1>
+    {% endif %}
+
+
+    {{form(form)}}
+
+{% endblock %}

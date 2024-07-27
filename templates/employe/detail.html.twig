@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{employe.nom}} {{employe.prenom}}{% endblock %}
+
+{% block body %}
+    <h1>{{employe.nom}} {{employe.prenom}}</h1>
+
+    <h2>Infomations global</h2>
+    <li>Date de Naissance : {{employe.dateNaissance | date('d.m.Y')}} </li>
+    <li>Embauché le : {{employe.dateEmbauche | date('d.m.Y')}}</li>
+    <h2>Informations sur l'entreprise</h2>
+    <li>Nom de l'entreprise :<a href="{{path('app_entrepriseDetail',{id:employe.entreprise.id})}}">{{employe.entreprise.raisonSociale}}</a></li>
+    <li>Date de création : {{employe.entreprise.dateCreation | date('d.m.Y')}} </li>
+    <li>Adresse : {{employe.entreprise.adresse}}, {{employe.entreprise.cp}}</li>
+    <li>Ville : {{employe.entreprise.ville}} </li>
+{% endblock %}
